@@ -17,15 +17,10 @@ public class SemiMagic {
         			return false;
         	}
         }
-        // if (reject(square)) {
-        //     return false;
-        // }
-        // The solution is complete and valid
         return true;
     }
 
     public static boolean reject(int[][] square) {
-        // TODO: Complete this method
         int n = square.length;
         int magic = (int)(n*(n*n+1)/2);
         for(int i=0; i<square.length; i++){
@@ -91,19 +86,12 @@ public class SemiMagic {
     }
 
     public static int[][] extend(int[][] square) {
-        // TODO: Complete this method
         int [][] temp = new int[square.length][square.length];
         for(int i=0; i<square.length; i++){
         	for(int j=0; j<square.length; j++){
         		temp[i][j] = square[i][j];
         		}
         	}
-        /*int[] temp2 = new int(square.length*square.length);
-        for(int a=1; a<=temp.length; a++){
-	        for(int i=0; i<square.length; i++){
-	        	for(int j=0; j<square.length; j++){
-	        		if(square[i][j] == a)
-	        			temp[a-1] = square[i][j];
 	        	}
 	        }	
     	}*/
@@ -113,7 +101,6 @@ public class SemiMagic {
         			temp[i][j] = 1;
         			row = i;
         			col = j;
-        			//System.out.println("Extend:"+row+","+col);
         			return temp;
         			}
         	}
@@ -122,7 +109,6 @@ public class SemiMagic {
     }
 
     public static int[][] next(int[][] square) {
-        // TODO: Complete this method
         int [][] temp = new int[square.length][square.length];
         for(int i=0; i<square.length; i++){
         	for(int j=0; j<square.length; j++){
@@ -166,7 +152,7 @@ public class SemiMagic {
     }
 
     static void testIsFullSolution() {
-        // TODO: Complete this method
+
         int[][][] fullSolutions = new int[][][] {
             {{4, 9, 2},{3, 5, 7},{8, 1, 6}},
             {{2, 7, 6},{9, 5, 1},{4, 3, 8}},
@@ -207,7 +193,7 @@ public class SemiMagic {
     }
 
     static void testReject() {
-        // TODO: Complete this method
+	    
         int[][][] notRejected = new int[][][] {
             {{0, 0, 0},{0, 0, 0},{0, 0, 0}},
             {{4, 9, 0},{3, 5, 0},{8, 0, 0}},
@@ -252,7 +238,7 @@ public class SemiMagic {
     }
 
     static void testExtend() {
-        // TODO: Complete this method
+
         int[][][] noExtend = new int[][][] {
         	{{8, 1, 6},{3, 5, 7},{4, 9, 2}},
         	{{2, 7, 6},{9, 5, 1},{4, 3, 8}},
@@ -293,7 +279,7 @@ public class SemiMagic {
     }
 
     static void testNext() {
-        // TODO: Complete this method
+
         /* This method was a little tricky for me to figure out because my next method is conditional on extend running correctly.
         In extend I keep track of the index of the array that was changed last and hold that in a global variable. This tells me
         the orientation of where in the original square the other permanent(given) magic numbers are. In order for this testNext
